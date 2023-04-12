@@ -1,0 +1,47 @@
+log4j:ERROR setFile(null,true) call failed.
+java.io.FileNotFoundException: /home/gusco/Repositorios/ssdd-zookeeper/bin/../logs/zookeeper_audit.log (Permiso denegado)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.apache.log4j.FileAppender.setFile(FileAppender.java:282)
+	at org.apache.log4j.RollingFileAppender.setFile(RollingFileAppender.java:200)
+	at org.apache.log4j.FileAppender.activateOptions(FileAppender.java:166)
+	at org.apache.log4j.config.PropertySetter.activate(PropertySetter.java:284)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:160)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:100)
+	at org.apache.log4j.PropertyConfigurator.parseAppender(PropertyConfigurator.java:802)
+	at org.apache.log4j.PropertyConfigurator.parseCategory(PropertyConfigurator.java:738)
+	at org.apache.log4j.PropertyConfigurator.parseCatsAndRenderers(PropertyConfigurator.java:652)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:518)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:577)
+	at org.apache.log4j.helpers.OptionConverter.selectAndConfigure(OptionConverter.java:504)
+	at org.apache.log4j.LogManager.<clinit>(LogManager.java:119)
+	at org.slf4j.impl.Reload4jLoggerFactory.<init>(Reload4jLoggerFactory.java:67)
+	at org.slf4j.impl.StaticLoggerBinder.<init>(StaticLoggerBinder.java:72)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:45)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:150)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:124)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:417)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:362)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:388)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.<clinit>(QuorumPeerMain.java:77)
+2023-04-10 21:24:25,782 [myid:] - INFO  [main:QuorumPeerConfig@174] - Reading configuration from: /home/gusco/Repositorios/ssdd-zookeeper/bin/../conf/zoo.cfg
+2023-04-10 21:24:25,797 [myid:] - INFO  [main:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2023-04-10 21:24:25,798 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2023-04-10 21:24:25,798 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2023-04-10 21:24:25,798 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2023-04-10 21:24:25,809 [myid:] - ERROR [main:QuorumPeerMain@99] - Invalid config, exiting abnormally
+org.apache.zookeeper.server.quorum.QuorumPeerConfig$ConfigException: Error processing /home/gusco/Repositorios/ssdd-zookeeper/bin/../conf/zoo.cfg
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:198)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:125)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:91)
+Caused by: java.lang.IllegalArgumentException: myid file is missing
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.checkValidity(QuorumPeerConfig.java:796)
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.setupQuorumPeerConfig(QuorumPeerConfig.java:667)
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parseProperties(QuorumPeerConfig.java:491)
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:194)
+	... 2 more
+Invalid config, exiting abnormally
+2023-04-10 21:24:25,812 [myid:] - INFO  [main:ZKAuditProvider@42] - ZooKeeper audit is disabled.
+2023-04-10 21:24:25,814 [myid:] - ERROR [main:ServiceUtils@48] - Exiting JVM with code 2
