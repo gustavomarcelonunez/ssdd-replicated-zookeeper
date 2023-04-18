@@ -81,17 +81,13 @@ Abrir tres terminales y en cada una acceder a los distintos contenedores:
 ```
 docker exec -ti "nombre-del-contenedor" bash
 ```
-Una vez dentro, levantar una instancia de ZooKeeper en cada contenedor:
-```
-bin/zkServer.sh start
-```
-y luego acceder a esa instancia, de la siguiente manera:
+Una vez dentro del contenedor acceder a su instancia de ZooKeeper, de la siguiente manera:
 
 ```
 bin/zkCli.sh
 ```
 
-Para consultar el estado de la instacia ZooKeeper y, además, saber qué servidor es el lider:
+Para saber qué servidor es el lider:
 
 - Dentro del contenedor:
 ```
@@ -101,6 +97,8 @@ bin/zkServer.sh status
 ```
 echo srvr | nc localhost "port" | grep Mode
 ```
+
+A partir de aqui el procedimiento es igual a cuando se ejecuta el código de manera local, ya se pueden ejecutar productores y consumidores.
 
 Los cambios realizados en cada instancia se replicarán en el resto.
 
