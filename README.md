@@ -28,19 +28,14 @@ En la siguiente sección de describe la preparación y puesta en marcha para cor
 
 Antes de realizar la instalación, verificar la lista de requerimientos en el siguiente [enlace](https://zookeeper.apache.org/doc/r3.4.13/zookeeperAdmin.html#sc_systemReq).
 <br>
-Nota: Las librerías de ZooKeeper ya se encuentran dentro del proyecto. Si desea descargar la librería del sitio oficial diríjase al siguiente [enlace](https://zookeeper.apache.org/releases.html).
+Nota: Las librerías de ZooKeeper ya se encuentran dentro del proyecto. Si desea descargar la librería del sitio oficial diríjase al siguiente [enlace](https://zookeeper.apache.org/releases.html). Para ejecutar las instancias replicadas, no hace falta descargar nada, los contenedores Docker ya incluyen las librerías necesarias.
 
 Desde aquí es posible configurar algunos parámetros desde un archivo de configuración ubicado en la carpeta *conf/zoo.cfg* (para más información sobre configuración ver el siguiente [tutorial](https://zookeeper.apache.org/doc/r3.4.13/zookeeperStarted.html#sc_InstallingSingleMode)).
 <br><br>
 
-## Compilación y ejecución
+## Ejecución
 
-Para compilar el archivo ejecutable, desde la carpeta raiz ejecutar:
-
-```
-javac -cp ".:lib/*" src/SyncPrimitive.java
-```
-**Inciar el servidor local**
+**Iniciar el servidor local**
 
 Para poder ejecutar el código de ejemplo, es necesario tener al menos una instancia de ZooKeeper corriendo. Para iniciar ZooKeeper escribir en la terminal:
 
